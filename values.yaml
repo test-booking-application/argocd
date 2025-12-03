@@ -1,0 +1,34 @@
+server:
+  service:
+    type: LoadBalancer
+  
+  ingress:
+    enabled: true
+    ingressClassName: nginx
+    annotations:
+      cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    hosts:
+      - argocd007.duckdns.org
+    tls:
+      - secretName: argocd-tls
+        hosts:
+          - argocd007.duckdns.org
+  
+  # Disable TLS on the load balancer termination (optional, for easier access)
+  insecure: true
+
+configs:
+  params:
+    server.insecure: true # Run server without TLS (useful if behind LB/Ingress handling TLS)
+
+controller:
+  metrics:
+    enabled: true
+    serviceMonitor:
+      enabled: false
+
+repoServer:
+  metrics:
+    enabled: true
+    serviceMonitor:
+      enabled: false
