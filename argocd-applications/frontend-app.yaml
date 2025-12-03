@@ -9,9 +9,9 @@ spec:
   project: default
   
   source:
-    repoURL: https://github.com/test-booking-application/argocd-apps-repo
+    repoURL: https://github.com/test-booking-application/frontend.git
     targetRevision: main
-    path: frontend
+    path: charts/frontend
     helm:
       releaseName: frontend
       values: |

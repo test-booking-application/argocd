@@ -9,9 +9,9 @@ spec:
   project: default
   
   source:
-    repoURL: https://github.com/test-booking-application/argocd-apps-repo
+    repoURL: https://github.com/test-booking-application/ticket-service.git
     targetRevision: main
-    path: ticket-service
+    path: charts/ticket-service
     helm:
       releaseName: ticket-service
       values: |

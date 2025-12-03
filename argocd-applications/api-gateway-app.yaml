@@ -9,9 +9,9 @@ spec:
   project: default
   
   source:
-    repoURL: https://github.com/test-booking-application/argocd-apps-repo
+    repoURL: https://github.com/test-booking-application/api-gateway.git
     targetRevision: main
-    path: api-gateway
+    path: charts/api-gateway
     helm:
       releaseName: api-gateway
       values: |
