@@ -18,9 +18,6 @@ server:
   insecure: true
 
 configs:
-  secret:
-    # Bcrypt hash of the string "admin"
-    argocdServerAdminPassword: "$2a$10$rRyBsGSHK6.uc8fntPwVIuLVHgsAhAX7TcdrqW/XPq2opfL9wSzzW"
   params:
     server.insecure: true # Run server without TLS (useful if behind LB/Ingress handling TLS)
 
