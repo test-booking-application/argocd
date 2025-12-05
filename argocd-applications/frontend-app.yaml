@@ -14,25 +14,6 @@ spec:
     path: charts/frontend
     helm:
       releaseName: frontend
-      values: |
-        image:
-          repository: 044302809167.dkr.ecr.us-east-1.amazonaws.com/ticket-booking/frontend
-          tag: latest
-          pullPolicy: IfNotPresent
-        
-        replicaCount: 2
-        
-        service:
-          type: LoadBalancer
-          port: 80
-        
-        resources:
-          limits:
-            cpu: 500m
-            memory: 512Mi
-          requests:
-            cpu: 250m
-            memory: 256Mi
   
   destination:
     server: https://kubernetes.default.svc
