@@ -1,18 +1,20 @@
-server:
   service:
-    type: LoadBalancer
+    type: ClusterIP
   
   ingress:
     enabled: true
-    ingressClassName: nginx
+    ingressClassName: alb
     annotations:
-      cert-manager.io/cluster-issuer: "letsencrypt-prod"
+      alb.ingress.kubernetes.io/scheme: internet-facing
+      alb.ingress.kubernetes.io/target-type: ip
+      alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+      # alb.ingress.kubernetes.io/group.name: "ticket-booking-apps" # Uncomment to share ALB with other apps
     hosts:
       - argocd007.duckdns.org
-    tls:
-      - secretName: argocd-tls
-        hosts:
-          - argocd007.duckdns.org
+    tls: []
+    #  - secretName: argocd-tls
+    #    hosts:
+    #      - argocd007.duckdns.org
   
   # Disable TLS on the load balancer termination (optional, for easier access)
   insecure: true
