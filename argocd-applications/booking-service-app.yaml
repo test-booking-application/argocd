@@ -14,25 +14,6 @@ spec:
     path: charts/booking-service
     helm:
       releaseName: booking-service
-      values: |
-        image:
-          repository: 044302809167.dkr.ecr.us-east-1.amazonaws.com/ticket-booking/booking-service
-          tag: latest
-          pullPolicy: IfNotPresent
-        
-        replicaCount: 2
-        
-        service:
-          type: ClusterIP
-          port: 3001
-        
-        resources:
-          limits:
-            cpu: 500m
-            memory: 512Mi
-          requests:
-            cpu: 250m
-            memory: 256Mi
   
   destination:
     server: https://kubernetes.default.svc
