@@ -1,3 +1,6 @@
+global:
+  domain: argocd007.duckdns.org
+
 server:
   service:
     type: ClusterIP
@@ -13,7 +16,9 @@ server:
       alb.ingress.kubernetes.io/group.name: "ticket-booking-tools"
       alb.ingress.kubernetes.io/certificate-arn: "arn:aws:acm:us-east-1:044302809167:certificate/0474e8aa-e9b7-49e3-87e2-ede0e20b48df"
     hosts:
-      - argocd007.duckdns.org
+      - host: argocd007.duckdns.org
+        paths:
+          - /
     tls: []
     #  - secretName: argocd-tls
     #    hosts:
