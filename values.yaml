@@ -14,11 +14,9 @@ server:
       alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
       alb.ingress.kubernetes.io/ssl-redirect: '443'
       alb.ingress.kubernetes.io/group.name: "ticket-booking-tools"
-      alb.ingress.kubernetes.io/certificate-arn: "arn:aws:acm:us-east-1:044302809167:certificate/0474e8aa-e9b7-49e3-87e2-ede0e20b48df"
+      alb.ingress.kubernetes.io/certificate-arn: "arn:aws:acm:us-east-1:044302809167:certificate/25c6d903-6548-423f-a711-00d9700f7f11"
     hosts:
-      - host: argocd007.duckdns.org
-        paths:
-          - /
+      - argocd007.duckdns.org
     tls: []
     #  - secretName: argocd-tls
     #    hosts:
