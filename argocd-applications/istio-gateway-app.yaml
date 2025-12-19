@@ -15,7 +15,7 @@ spec:
       values: |
         name: istio-ingressgateway
         service:
-          type: ClusterIP
+          type: NodePort
           ports:
           - name: http2
             port: 80
