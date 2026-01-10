@@ -121,7 +121,7 @@ spec:
       releaseName: api-gateway
       values: |
         image:
-          repository: 044302809167.dkr.ecr.us-east-1.amazonaws.com/ticket-booking/api-gateway
+          repository: 173235558072.dkr.ecr.us-east-1.amazonaws.com/ticket-booking/api-gateway
           tag: latest
   destination:
     server: https://kubernetes.default.svc
@@ -150,7 +150,7 @@ helm upgrade --install api-gateway ./charts/api-gateway \
 File: `api-gateway/values.yaml`
 ```yaml
 image:
-  repository: 044302809167.dkr.ecr.us-east-1.amazonaws.com/ticket-booking/api-gateway
+  repository: 173235558072.dkr.ecr.us-east-1.amazonaws.com/ticket-booking/api-gateway
   tag: v1.2.3  # Update this when you want new version deployed
   pullPolicy: IfNotPresent
 
